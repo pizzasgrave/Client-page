@@ -1,22 +1,13 @@
-body {
-    background-color: rgb(0, 128, 128);
-    color: rgb(255, 255, 255);
-}
-
-.compatibility-notice {
-    margin: 0.75rem auto;
-    padding: 0.75rem 1rem;
-    color: #000;
-    background: #f7f9e3;
-    border: 2px solid #5b4b00;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #fff;
+    background-color: rgb(0, 128, 128);
 }
 
 .skip-link {
@@ -36,29 +27,12 @@ body {
     transform: translateY(0);
 }
 
-.basicButton:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 3px;
-}
-
-.lighthead {
-    color: #f7f9e3;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.lime-green {
-    color: limegreen;
-}
-
 .basicButton {
     display: inline-block;
-    width: fit-content; 
+    width: fit-content;
     margin: 0 auto;
-    padding: 2.5px 2.5px;
-    color: rgb(0, 0, 0);
+    padding: 2.5px;
+    color: #000;
     border-radius: 10px;
     background-color: rgb(139, 139, 139);
     border-left: 3px solid rgb(46, 46, 46);
@@ -69,1082 +43,98 @@ body {
     transition: transform 80ms ease, box-shadow 80ms ease;
 }
 
+.basicButton:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
 .basicButton:active {
     transform: translate(3px, 3px);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 
+button:not(.basicButton) {
+    transition: transform 80ms ease;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .basicButton:hover,
-    button:not(.discord-status-trigger):not(.basicButton):hover,
-    .carousel-control-prev:hover,
-    .carousel-control-next:hover {
+    button:not(.basicButton):hover {
         transform: scale(1.05);
-    }
-
-    .site-search-input:hover {
-        transform: scale(1.02);
     }
 
     .basicButton:hover:active {
         transform: translate(3px, 3px) scale(1.05);
     }
-
-    .carousel-control-prev:hover:active,
-    .carousel-control-next:hover:active {
-        transform: scale(0.98);
-    }
 }
 
-button:not(.discord-status-trigger):not(.basicButton) {
-    transition: transform 80ms ease;
-}
-
-.site-search-input {
-    transition: transform 120ms ease;
-}
-
-.site-search-input::-webkit-search-cancel-button {
-    cursor: pointer;
-    transition: transform 120ms ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .site-search-input::-webkit-search-cancel-button:hover {
-        transform: scale(1.2);
-    }
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    transition: transform 80ms ease;
-}
-
-.surprise-button {
-    display: block;
-    font: inherit;
-    cursor: pointer;
-}
-
-.backButton {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.links a {
-    display: block;
-    margin: 22px 0;
-    text-decoration: none;
-}
-
-.home-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.home-links a {
-    margin: 0;
-}
-
-.site-footer {
-    margin: 3rem auto 0;
-    padding: 1rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
-
-.site-footer h2,
-.site-footer p {
-    margin: 0.5rem 0;
-}
-
-.site-footer-content {
+.site-header {
     width: min(100%, 1000px);
     margin: 0 auto;
 }
 
-.site-footer-links {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-.site-footer-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-}
-
-.site-footer-credit {
-    margin-top: 1rem;
-}
-
-.hero-box {
-    background-color: rgb(114, 114, 250);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    padding: 2.5px 2.5px;
-    border-radius: 10px;
-    background-color: rgb(139, 139, 139);
+.site-navbar {
+    color: #000;
+    background: rgb(139, 139, 139);
     border-left: 3px solid rgb(46, 46, 46);
     border-bottom: 3px solid rgb(46, 46, 46);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.world {
-    font-size: 24px;
+.site-navbar .navbar-brand,
+.site-navbar .nav-link {
+    color: #000;
+}
+
+.site-navbar .navbar-brand {
+    font-size: 1.25rem;
     font-weight: bold;
-    margin: 0 auto;
 }
 
-.site-search {
-    width: min(100%, 38rem);
-    margin: 1rem auto 0;
+.site-navbar .navbar-toggler {
+    border-color: rgb(46, 46, 46);
 }
 
-.site-search-form {
-    display: flex;
-    gap: 0.5rem;
+.site-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(46, 46, 46, 0.25);
 }
 
-.site-search-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.site-search-input {
-    flex: 1;
-    min-width: 0;
-    min-height: 44px;
-    padding: 0.65rem 0.8rem;
+.site-nav-drawer {
     color: #000;
-    background: #e6e6e6;
-    border: 2px solid #2e2e2e;
-    border-radius: 8px;
-    font: inherit;
+    background: rgb(139, 139, 139);
+    border-color: rgb(46, 46, 46);
 }
 
-.site-search-input::placeholder {
-    color: #4b4b4b;
-    opacity: 1;
+.site-nav-drawer .drawer-header {
+    border-color: rgb(46, 46, 46);
 }
 
-.site-search-input:focus-visible,
-.site-search-button:focus-visible,
-.site-search-results a:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 3px;
-}
-
-.site-search-button {
-    margin: 0;
-    padding: 0.65rem 1rem;
-}
-
-.site-search-status {
-    margin: 0.5rem 0 0;
-    color: #000;
-}
-
-.site-search-status:empty {
-    display: none;
-}
-
-.site-search-results {
-    display: grid;
-    gap: 0.5rem;
-    max-height: 18rem;
-    margin: 0.5rem 0 0;
-    padding: 0.5rem;
-    overflow-y: auto;
-    list-style: none;
-    text-align: left;
-    background: #f7f9e3;
-    border: 1px solid #2e2e2e;
-    border-radius: 12px;
-}
-
-.site-search-results[hidden] {
-    display: none;
-}
-
-.site-search-results a {
-    display: block;
-    padding: 0.65rem 0.75rem;
-    color: #000;
-    background: rgb(155, 155, 155);
-    border-radius: 8px;
-    text-decoration: none;
-}
-
-.site-search-results a:hover {
-    text-decoration: underline;
-}
-
-.site-search-results p {
-    margin: 0.25rem 0 0;
-}
-
-img,
-iframe {
-    max-width: 100%;
-}
-
-.website-photo {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: clamp(280px, 55vw, 520px);
-    object-fit: contain;
-}
-
-.website-carousel {
-    position: relative;
-    max-width: 760px;
-    margin: 0 auto 10px;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.carousel-slide-toggle {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    clip-path: inset(50%);
-    white-space: nowrap;
-}
-
-.carousel-inner {
+.site-nav-link {
     display: flex;
-    transition: transform 400ms ease;
-}
-
-.carousel-item {
-    display: flex;
-    flex: 0 0 100%;
     align-items: center;
     justify-content: center;
-    min-width: 0;
-    visibility: hidden;
-    transition: visibility 0s linear 400ms;
+    min-width: 5rem;
+    min-height: 44px;
+    margin: 0;
+    padding: 0.5rem 1rem;
 }
 
-#catPhotoSlide1:checked ~ .carousel-inner .carousel-item:nth-child(1),
-#catPhotoSlide2:checked ~ .carousel-inner .carousel-item:nth-child(2),
-#catPhotoSlide3:checked ~ .carousel-inner .carousel-item:nth-child(3),
-#catPhotoSlide4:checked ~ .carousel-inner .carousel-item:nth-child(4) {
-    visibility: visible;
-    transition: none;
-}
-
-#catPhotoSlide2:checked ~ .carousel-inner {
-    transform: translateX(-100%);
-}
-
-#catPhotoSlide3:checked ~ .carousel-inner {
-    transform: translateX(-200%);
-}
-
-#catPhotoSlide4:checked ~ .carousel-inner {
-    transform: translateX(-300%);
-}
-
-.carousel-indicators {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    bottom: 12px;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.carousel-indicators label {
-    width: 12px;
-    height: 12px;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.45);
-    cursor: pointer;
-}
-
-#catPhotoSlide1:checked ~ .carousel-indicators label[for="catPhotoSlide1"],
-#catPhotoSlide2:checked ~ .carousel-indicators label[for="catPhotoSlide2"],
-#catPhotoSlide3:checked ~ .carousel-indicators label[for="catPhotoSlide3"],
-#catPhotoSlide4:checked ~ .carousel-indicators label[for="catPhotoSlide4"] {
-    background: #fff;
-}
-
-#catPhotoSlide1:focus-visible ~ .carousel-indicators label[for="catPhotoSlide1"],
-#catPhotoSlide2:focus-visible ~ .carousel-indicators label[for="catPhotoSlide2"],
-#catPhotoSlide3:focus-visible ~ .carousel-indicators label[for="catPhotoSlide3"],
-#catPhotoSlide4:focus-visible ~ .carousel-indicators label[for="catPhotoSlide4"] {
-    outline: 3px solid #65b7ff;
-    outline-offset: 3px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute;
-    top: 50%;
-    display: none;
-    width: 44px;
-    height: 44px;
-    margin-top: -22px;
-    background: rgba(0, 0, 0, 0.45);
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.carousel-control-prev {
-    left: 0;
-}
-
-.carousel-control-next {
-    right: 0;
-}
-
-.carousel-control-prev::after,
-.carousel-control-next::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 16px;
-    height: 16px;
-    border-top: 3px solid #fff;
-    border-right: 3px solid #fff;
-    transform: translate(-50%, -50%);
-    content: "";
-}
-
-.carousel-control-prev::after {
-    transform: translate(-50%, -50%) rotate(-135deg);
-}
-
-.carousel-control-next::after {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-#catPhotoSlide1:checked ~ .carousel-controls .prev-slide-4,
-#catPhotoSlide1:checked ~ .carousel-controls .next-slide-2,
-#catPhotoSlide2:checked ~ .carousel-controls .prev-slide-1,
-#catPhotoSlide2:checked ~ .carousel-controls .next-slide-3,
-#catPhotoSlide3:checked ~ .carousel-controls .prev-slide-2,
-#catPhotoSlide3:checked ~ .carousel-controls .next-slide-4,
-#catPhotoSlide4:checked ~ .carousel-controls .prev-slide-3,
-#catPhotoSlide4:checked ~ .carousel-controls .next-slide-1 {
-    display: block;
+.page-intro {
+    text-align: center;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .carousel-inner {
+    .basicButton,
+    button:not(.basicButton) {
         transition: none;
     }
-}
 
-.photo-trigger {
-    display: block;
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: zoom-in;
-}
-
-.photo-trigger:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: -3px;
-}
-
-.photo-description-dialog {
-    width: min(90vw, 56rem);
-    max-height: 90vh;
-    --discord-dialog-enter-offset: 2.5rem;
-    --discord-dialog-enter-duration: 320ms;
-    padding: 0;
-    color: #fff;
-    background: rgba(25, 25, 25, 0.94);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: 12px;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
-    overflow-y: auto;
-}
-
-.photo-description-dialog[open] {
-    animation: discord-contact-appear var(--discord-dialog-enter-duration) ease both;
-}
-
-.photo-description-dialog.is-closing[open] {
-    animation: discord-contact-disappear var(--discord-dialog-enter-duration) ease both;
-}
-
-.photo-description-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.65);
-    animation: discord-contact-backdrop-appear var(--discord-dialog-enter-duration) ease both;
-}
-
-.photo-description-dialog.is-closing::backdrop {
-    animation: discord-contact-backdrop-disappear var(--discord-dialog-enter-duration) ease both;
-}
-
-.photo-description-content {
-    padding: 1.5rem;
-}
-
-.photo-description-content form {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-}
-
-.photo-description-close {
-    min-height: 44px;
-    font: inherit;
-    margin: 0;
-}
-
-.photo-description-close:focus-visible {
-    outline: 3px solid #65b7ff;
-    outline-offset: 3px;
-}
-
-.photo-description-content p,
-.photo-description-content h2 {
-    margin: 0;
-    font-size: clamp(1.25rem, 4vw, 1.75rem);
-    line-height: 1.5;
-    overflow-wrap: anywhere;
-    font-weight: 400;
-}
-
-.photo-description-secondary {
-    margin-top: 0.75rem;
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 400;
-}
-
-.photo-description-image {
-    display: block;
-    width: 100%;
-    max-height: 65vh;
-    margin: 0 auto 1rem;
-    object-fit: contain;
-}
-
-.photo-description-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-}
-
-.photo-description-actions .basicButton {
-    margin: 0;
-}
-
-pre {
-    max-width: 100%;
-    overflow-x: auto;
-}
-
-@media (max-width: 600px) {
-    body {
-        padding: 1rem;
+    .basicButton:hover,
+    .basicButton:active,
+    .basicButton:hover:active,
+    button:not(.basicButton):hover,
+    button:not(.basicButton):hover:active {
+        transform: none;
     }
-
-    h1 {
-        font-size: clamp(1.5rem, 7vw, 2rem);
-        overflow-wrap: anywhere;
-    }
-
-    .lighthead,
-    .world {
-        font-size: clamp(1.25rem, 6vw, 1.5rem);
-    }
-
-    .basicButton,
-    .links a {
-        max-width: 100%;
-        overflow-wrap: anywhere;
-    }
-
-    .basicButton {
-        min-height: 44px;
-        padding: 0.75rem 1rem;
-        text-align: center;
-    }
-
-    .links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .hero-box + .links {
-        margin-top: 1rem;
-    }
-
-    .links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: min(100%, 28rem);
-        margin: 0;
-    }
-
-    .spotify-embed iframe {
-        display: block;
-        width: 100%;
-        height: 352px;
-    }
-
-    .site-footer-links {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .site-search-form {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .site-search-input {
-        flex-basis: 100%;
-    }
-}
-
-.musictextColor a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.socials-page {
-    min-height: 100vh;
-    padding: clamp(1rem, 4vw, 2rem);
-}
-
-.socials-content {
-    width: 100%;
-}
-
-.socials-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: min(100%, 28rem);
-    margin: 2rem auto 1rem;
-}
-
-.socials-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 44px;
-    margin: 0;
-    padding: 0.75rem 1rem;
-    text-align: center;
-    overflow-wrap: anywhere;
-}
-
-.social-icon-link {
-    gap: 0.5rem;
-}
-
-.social-link-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    flex: none;
-}
-
-.discord-status {
-    width: 100%;
-    text-align: center;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #7a7a7a;
-}
-
-.discord-status-trigger-wrap {
-    position: relative;
-}
-
-.discord-status h2 {
-    margin: 0 0 0.5rem;
-}
-
-.discord-status-iframe {
-    display: block;
-    width: 100%;
-    height: 80px;
-    margin: 0 auto;
-    border: 0;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #7a7a7a;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    border-left: 3px solid rgb(46, 46, 46);
-    border-bottom: 3px solid rgb(46, 46, 46);
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.discord-status-iframe::-webkit-scrollbar {
-    display: none;
-}
-
-.discord-status-trigger {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-}
-
-.discord-status-tooltip {
-    position: fixed;
-    z-index: 10;
-    max-width: min(16rem, calc(100vw - 1rem));
-    padding: 0.5rem 0.75rem;
-    color: #000;
-    background-color: rgb(139, 139, 139);
-    border-left: 3px solid rgb(46, 46, 46);
-    border-bottom: 3px solid rgb(46, 46, 46);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    font-size: 0.9rem;
-    line-height: 1.3;
-    pointer-events: none;
-}
-
-.discord-status-tooltip[hidden] {
-    display: none;
-}
-
-.discord-status-trigger:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: -3px;
-}
-
-.discord-contact-dialog {
-    position: fixed;
-    width: min(90vw, 24rem);
-    --discord-dialog-enter-offset: 2.5rem;
-    --discord-dialog-enter-duration: 320ms;
-    padding: 1.5rem;
-    color: #fff;
-    background: rgba(25, 25, 25, 0.78);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: 12px;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(8px);
-}
-
-.discord-contact-dialog[open] {
-    animation: discord-contact-appear var(--discord-dialog-enter-duration) ease both;
-}
-
-.discord-contact-dialog.is-closing[open] {
-    animation: discord-contact-disappear var(--discord-dialog-enter-duration) ease both;
-}
-
-.discord-contact-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.4);
-    animation: discord-contact-backdrop-appear var(--discord-dialog-enter-duration) ease both;
-}
-
-.discord-contact-dialog.is-closing::backdrop {
-    animation: discord-contact-backdrop-disappear var(--discord-dialog-enter-duration) ease both;
-}
-
-@keyframes discord-contact-appear {
-    from {
-        opacity: 0;
-        transform: translateY(var(--discord-dialog-enter-offset)) scale(0.98);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes discord-contact-disappear {
-    from {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(var(--discord-dialog-enter-offset)) scale(0.98);
-    }
-}
-
-@keyframes discord-contact-backdrop-appear {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes discord-contact-backdrop-disappear {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .discord-contact-dialog {
-        --discord-dialog-enter-offset: 0.5rem;
-        --discord-dialog-enter-duration: 160ms;
-    }
-
-    .photo-description-dialog {
-        --discord-dialog-enter-offset: 0.5rem;
-        --discord-dialog-enter-duration: 160ms;
-    }
-
-    .contact-dialog {
-        --discord-dialog-enter-offset: 0.5rem;
-        --discord-dialog-enter-duration: 160ms;
-    }
-
-    .discord-contact-dialog[open],
-    .discord-contact-dialog::backdrop,
-    .photo-description-dialog[open],
-    .photo-description-dialog::backdrop,
-    .contact-dialog[open],
-    .contact-dialog::backdrop {
-        animation-duration: var(--discord-dialog-enter-duration);
-    }
-}
-
-.discord-contact-back {
-    display: block;
-    margin: 0 0 1rem auto;
-    font: inherit;
-}
-
-.discord-contact-dialog h2 {
-    margin: 0 0 1rem;
-    font-size: 1.25rem;
-}
-
-.discord-contact-copy-row {
-    display: flex;
-    gap: 0.75rem;
-}
-
-.discord-contact-copy-row input {
-    min-width: 0;
-    flex: 1;
-    padding: 0.65rem;
-    color: #fff;
-    font: inherit;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 8px;
-}
-
-.discord-contact-copy-row .basicButton {
-    margin: 0;
-    font: inherit;
-}
-
-.discord-contact-copy-status {
-    min-height: 1.5em;
-    margin: 0.75rem 0 0;
-}
-
-.secret-status-button {
-    display: block;
-    margin: 1rem auto 0;
-    text-align: center;
-}
-
-.secret-status-button[hidden] {
-    display: none;
-}
-
-.socials-note {
-    margin: 0;
-    text-align: center;
-}
-
-.contact-trigger {
-    font: inherit;
-}
-
-.contact-dialog {
-    width: min(90vw, 32rem);
-    max-height: min(90vh, 48rem);
-    --discord-dialog-enter-offset: 2.5rem;
-    --discord-dialog-enter-duration: 320ms;
-    overflow-y: auto;
-    padding: 1.5rem;
-    color: #fff;
-    background: rgba(25, 25, 25, 0.94);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: 12px;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
-}
-
-.contact-dialog[open] {
-    animation: discord-contact-appear var(--discord-dialog-enter-duration) ease both;
-}
-
-.contact-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.55);
-    animation: discord-contact-backdrop-appear var(--discord-dialog-enter-duration) ease both;
-}
-
-.contact-dialog.is-closing[open] {
-    animation: discord-contact-disappear var(--discord-dialog-enter-duration) ease both;
-}
-
-.contact-dialog.is-closing::backdrop {
-    animation: discord-contact-backdrop-disappear var(--discord-dialog-enter-duration) ease both;
-}
-
-.contact-close {
-    display: block;
-    margin: 0 0 1rem auto;
-    font: inherit;
-}
-
-.contact-dialog h2 {
-    margin: 0 0 0.75rem;
-}
-
-.contact-form {
-    display: grid;
-    gap: 0.65rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.65rem;
-    color: #fff;
-    font: inherit;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 8px;
-}
-
-.contact-photo-dropzone {
-    display: grid;
-    gap: 0.65rem;
-    padding: 0.75rem;
-    border: 2px dashed rgba(255, 255, 255, 0.7);
-    border-radius: 8px;
-    transition: background-color 120ms ease, border-color 120ms ease;
-}
-
-.contact-photo-dropzone.is-dragging {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #fff;
-}
-
-.contact-photo-dropzone input[type="file"] {
-    padding: 0.5rem;
-}
-
-.contact-photo-selection {
-    margin: 0;
-    overflow-wrap: anywhere;
-}
-
-.contact-form input:focus-visible,
-.contact-form textarea:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 2px;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-honeypot {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-}
-
-.contact-submit {
-    justify-self: start;
-    margin: 0;
-    font: inherit;
-}
-
-.contact-status {
-    min-height: 1.5em;
-    margin: 0;
-}
-
-.site-error-dialog {
-    width: min(90vw, 42rem);
-    max-height: min(90vh, 48rem);
-    --discord-dialog-enter-offset: 2.5rem;
-    --discord-dialog-enter-duration: 320ms;
-    overflow-y: auto;
-    padding: 1.5rem;
-    color: #fff;
-    background: rgba(25, 25, 25, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: 12px;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
-}
-
-.site-error-trigger {
-    position: fixed;
-    z-index: 20;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    margin: 0;
-    font: inherit;
-    opacity: 0.85;
-}
-
-.site-error-dialog[open] {
-    animation: discord-contact-appear var(--discord-dialog-enter-duration) ease both;
-}
-
-.site-error-dialog.is-closing[open] {
-    animation: discord-contact-disappear var(--discord-dialog-enter-duration) ease both;
-}
-
-.site-error-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.6);
-    animation: discord-contact-backdrop-appear var(--discord-dialog-enter-duration) ease both;
-}
-
-.site-error-dialog.is-closing::backdrop {
-    animation: discord-contact-backdrop-disappear var(--discord-dialog-enter-duration) ease both;
-}
-
-.site-error-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.site-error-header h2 {
-    margin: 0;
-}
-
-.site-error-close,
-.site-error-clear,
-.site-error-copy {
-    margin: 0;
-    font: inherit;
-}
-
-.site-error-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-}
-
-.site-error-report {
-    display: block;
-    width: 100%;
-    min-height: 12rem;
-    max-height: 45vh;
-    resize: vertical;
-    padding: 0.75rem;
-    color: #fff;
-    font: 0.85rem/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: 8px;
-}
-
-.site-error-report:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 2px;
-}
-
-.site-error-copy-status {
-    min-height: 1.5em;
-    margin: 0.5rem 0;
-}
-
-.site-error-copy-status:empty {
-    display: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .site-error-dialog {
-        --discord-dialog-enter-offset: 0.5rem;
-        --discord-dialog-enter-duration: 160ms;
-    }
-
-    .site-error-dialog[open],
-    .site-error-dialog::backdrop {
-        animation-duration: var(--discord-dialog-enter-duration);
-    }
-}
-
-.capstone-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: min(100%, 28rem);
-    margin: 2rem auto 1rem;
-}
-
-.capstone-links-main {
-   display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 44px;
-    margin: 0;
-    padding: 0.75rem 1rem;
-    text-align: center;
-    overflow-wrap: anywhere;
 }
